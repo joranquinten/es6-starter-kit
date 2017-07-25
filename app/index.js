@@ -1,8 +1,6 @@
+// Importing of a module
+import { calculator as calc } from './calculator';
 
+console.log( calc.add(4, 10, 2) );
 
-const goLarge = () => {
-    console.log(this);
-    console.log('3, 2, 1, blastoff!');
-}
-
-goLarge();
+console.log( calc.exp(2, 10) );
