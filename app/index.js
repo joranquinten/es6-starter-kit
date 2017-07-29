@@ -1,18 +1,25 @@
 // Importing of a module
-import { calculator as calc } from './module.calculator';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import WeatherWidget from './react.weather.component.js';
 
-console.log( calc.add(4, 10, 2) );
+class App extends Component {
+    render() {
+        return (
+            <div>
+            <AppHeader />
+            <WeatherWidget />
+            </div>
+        );
+    }
+} 
 
-console.log( calc.exp(2, 10) );
+class AppHeader extends Component {
+    render() {
+        return (
+            <h1>ES6 Webpack React starter kit</h1>
+        );
+    }
+}
 
-// Class example
-import { Vehicle, Car, Chopper } from './class.vehicle.js'; 
-
-// Describe a type of car and interact with the class
-let ford = new Car('Ford', 160, 'Mustang');
-ford.move();
-
-// Describe a type of chopper and interact with the class
-let heli = new Chopper('Apache', 220);
-heli.move();
-setTimeout(() => heli.leave(), 2000);
+ReactDOM.render(<App />, document.getElementById('root'));
